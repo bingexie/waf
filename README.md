@@ -126,7 +126,7 @@ HelloWorld
 修改Nginx的配置文件，加入以下配置。注意路径，同时WAF日志默认存放在/tmp/日期_waf.log
 #WAF
     lua_shared_dict limit 50m;
-    lua_package_path "/usr/local/openresty/nginx/conf/waf/?.lua";
+    lua_package_path "/usr/local/openresty/nginx/conf/waf/?.lua;;";
     init_by_lua_file "/usr/local/openresty/nginx/conf/waf/init.lua";
     access_by_lua_file "/usr/local/openresty/nginx/conf/waf/access.lua";
 
